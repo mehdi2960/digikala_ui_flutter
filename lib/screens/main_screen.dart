@@ -11,12 +11,13 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: [
+        children: const [
           HomeScreen(),
           Scaffold(),
           Scaffold(),
@@ -25,13 +26,11 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(
-        curentIndex: currentIndex,
-        onTap: (int index) {
-          setState(
-            () {
-              currentIndex= index;
-            },
-          );
+        currentIndex: currentIndex,
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
         },
       ),
     );

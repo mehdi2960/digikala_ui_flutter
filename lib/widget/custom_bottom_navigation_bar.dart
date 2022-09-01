@@ -3,15 +3,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar(
-      {Key? key, required this.onTap, required this.curentIndex})
+      {Key? key, required this.onTap, required this.currentIndex})
       : super(key: key);
 
-  final int curentIndex;
+  final int currentIndex;
   final Function(int index) onTap;
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: curentIndex,
+      type:BottomNavigationBarType.fixed,
+      fixedColor: Colors.black,
+      currentIndex: currentIndex,
       onTap: onTap,
       items: const [
         BottomNavigationBarItem(
@@ -31,13 +34,16 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: FaIcon(
-            FontAwesomeIcons.googlePay,
+            FontAwesomeIcons.googlePlay,
             size: 25,
           ),
-          label: "مگند",
+          label: "مگنت",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.usb_rounded),
+          icon: FaIcon(
+            FontAwesomeIcons.user,
+            size: 25,
+          ),
           label: "دیجی کالای من",
         ),
       ],
