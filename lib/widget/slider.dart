@@ -24,7 +24,7 @@ class _SliderState extends State<SliderWiget> {
         Container(
           width: double.infinity,
           height: 220,
-          padding: const EdgeInsets.symmetric(vertical: AppSpacings.xxl),
+          padding: const EdgeInsets.symmetric(vertical: AppSpacings.xl),
           child: CarouselSlider.builder(
             itemCount: SliderModel.items.length,
             itemBuilder: (context, index, realIndex) => Container(
@@ -37,12 +37,15 @@ class _SliderState extends State<SliderWiget> {
               ),
             ),
             options: CarouselOptions(
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    currentIndex=index;
-                  });
-                }),
+              autoPlay: true,
+              onPageChanged: (index, reason) {
+                setState(
+                  () {
+                    currentIndex = index;
+                  },
+                );
+              },
+            ),
           ),
         ),
         Positioned(
@@ -52,11 +55,12 @@ class _SliderState extends State<SliderWiget> {
             activeIndex: currentIndex,
             count: SliderModel.items.length,
             effect: ScrollingDotsEffect(
-                dotHeight: 10.0,
-                dotWidth: 10.0,
-                activeDotColor: AppColors.black,
-                dotColor: AppColors.lightGrey200,
-                maxVisibleDots: 5),
+              dotHeight: 10.0,
+              dotWidth: 10.0,
+              activeDotColor: AppColors.black,
+              dotColor: AppColors.lightGrey200,
+              maxVisibleDots: 5,
+            ),
           ),
         ),
       ],
