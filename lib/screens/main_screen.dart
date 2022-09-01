@@ -29,8 +29,7 @@ class _MainScreenState extends State<MainScreen> {
         onTap: (int index) {
           setState(
             () {
-              currentIndex:
-              index;
+              currentIndex= index;
             },
           );
         },
