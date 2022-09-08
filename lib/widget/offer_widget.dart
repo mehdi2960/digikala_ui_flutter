@@ -10,9 +10,9 @@ class Offer extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height/1.99,
-      padding: EdgeInsets.symmetric(vertical: AppSpacings.xl),
-      decoration: BoxDecoration(
+      height: size.height / 1.99,
+      padding: const EdgeInsets.symmetric(vertical: AppSpacings.xl),
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
             AppColors.lightRed,
@@ -31,10 +31,10 @@ class Offer extends StatelessWidget {
               final offer = OfferModel.items[index < 3 ? index : index - 2];
               return index == 0
                   ? FirstOfferTitle(size: size)
-                  : index == OfferModel.items.length+1
+                  : index == OfferModel.items.length + 1
                       ? Container(
-                          padding: EdgeInsets.all(AppSpacings.l),
-                          margin: EdgeInsets.only(right: AppSpacings.m),
+                          padding: const EdgeInsets.all(AppSpacings.l),
+                          margin: const EdgeInsets.only(right: AppSpacings.m),
                           width: size.width / 2.8,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -42,9 +42,17 @@ class Offer extends StatelessWidget {
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.arrow_circle_left_outlined,size: 50,color: AppColors.mainRed,),
-                              Text("مشاهده همه",style:TextStyle(color:Colors.black,fontSize: 17),),
+                            children: const [
+                              Icon(
+                                Icons.arrow_circle_left_outlined,
+                                size: 50,
+                                color: AppColors.mainRed,
+                              ),
+                              Text(
+                                "مشاهده همه",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 17),
+                              ),
                             ],
                           ),
                         )
@@ -68,8 +76,8 @@ class FirstOfferTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(AppSpacings.l),
-      margin: EdgeInsets.only(right: AppSpacings.m),
+      padding: const EdgeInsets.all(AppSpacings.l),
+      margin: const EdgeInsets.only(right: AppSpacings.m),
       width: size.width / 2.8,
       decoration: BoxDecoration(
         // color: Colors.white,
@@ -77,7 +85,7 @@ class FirstOfferTitle extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
+          const Text(
             "پـیشنهاد\nشگفـت\nانگیـز",
             style: TextStyle(fontSize: 25, color: Colors.white),
           ),
@@ -99,8 +107,8 @@ class OfferTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.all(AppSpacings.l),
-      margin: EdgeInsets.only(right: AppSpacings.m),
+      padding: const EdgeInsets.all(AppSpacings.l),
+      margin: const EdgeInsets.only(right: AppSpacings.m),
       width: size.width / 2.8,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -126,12 +134,12 @@ class OfferTitle extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           if (offerModel.isAvailabel)
             Row(
-              children: [
+              children: const[
                 Icon(
                   Icons.check,
                   color: AppColors.blue,
@@ -147,33 +155,33 @@ class OfferTitle extends StatelessWidget {
               "تنها 2 عدد در انبار باقیست",
               style: TextStyle(fontSize: 12, color: AppColors.mainRed),
             ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 7.0, vertical: 2.0),
+                padding: const EdgeInsets.symmetric(horizontal: 7.0, vertical: 2.0),
                 decoration: BoxDecoration(
                     color: AppColors.mainRed,
                     borderRadius: BorderRadius.circular(AppSpacings.xxl)),
                 child: Text(
                   offerModel.discount,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Column(
                 children: [
                   Text(offerModel.price),
                   Text(
                     offerModel.previousPrice,
-                    style: TextStyle(
+                    style: const TextStyle(
                       decoration: TextDecoration.lineThrough,
                       color: AppColors.lightGrey200,
                       fontSize: 12,
@@ -181,13 +189,13 @@ class OfferTitle extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5.0,
               ),
               Image.asset("assets/images/toman.png"),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Text(

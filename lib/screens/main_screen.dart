@@ -1,3 +1,4 @@
+import '../screens/category/category_screen.dart';
 import 'package:flutter/material.dart';
 import '../widget/custom_bottom_navigation_bar.dart';
 import 'home_scrren.dart';
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
         index: currentIndex,
         children: const [
           HomeScreen(),
-          Scaffold(),
+          CategoryScreen(),
           Scaffold(),
           Scaffold(),
           Scaffold(),

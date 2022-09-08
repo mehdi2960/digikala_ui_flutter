@@ -1,6 +1,5 @@
 import 'package:digikala_ui/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import '../models/digi_apps_model.dart';
 
 class DigiGridView extends StatelessWidget {
@@ -12,24 +11,22 @@ class DigiGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
       itemCount: DigiAppsModel.items.length + 1,
       itemBuilder: (BuildContext context, int index) {
-        final app = DigiAppsModel
-            .items[index == DigiAppsModel.items[index] ? index - 1 : index];
+        final app = DigiAppsModel.items[index == DigiAppsModel.items.length ? index - 1 : index];
         return index == DigiAppsModel.items.length
             ? Column(
                 children: [
                   Container(
                     width: 70,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.lightGrey100,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.more_horiz,
                       color: AppColors.darkGrey100,
                     ),

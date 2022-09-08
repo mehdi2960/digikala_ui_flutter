@@ -16,11 +16,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          children: [
+          children: const [
             SliderWiget(),
             DigiGridView(),
             Offer(),
